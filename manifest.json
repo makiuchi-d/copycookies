@@ -1,0 +1,30 @@
+{
+	"name": "Copy Cookies",
+	"description" : "Copy cookies to clipboard",
+	"version": "1.0",
+	"manifest_version": 2,
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "icons/cookies16.png",
+			"32": "icons/cookies32.png",
+			"48": "icons/cookies48.png",
+			"128": "icons/cookies128.png"
+		}
+	},
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+K",
+				"mac": "MacCtrl+Shift+K"
+			},
+			"description": "Copy cookies to clipboard"
+		}
+	},
+	"permissions": [
+		"<all_urls>",
+		"activeTab",
+		"cookies",
+		"clipboardWrite"
+	]
+}
