@@ -1,4 +1,5 @@
-chrome.tabs.getSelected(tab => {
+(async function() {
+	let [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
 	chrome.cookies.getAll({"url":tab.url}, cookies => {
 		var area = document.createElement('textarea');
 		area.style.position = 'absolute';
@@ -14,4 +15,4 @@ chrome.tabs.getSelected(tab => {
 		document.execCommand("copy");
 		document.body.removeChild(area);
 	});
-});
+})();
